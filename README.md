@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Featured News Section – UI Task
 
-## Getting Started
+This project implements **only the highlighted featured news section** from the provided reference screenshot, as requested in the task scope. The goal is to demonstrate clean component design, responsive layout handling, and modern Next.js + Tailwind CSS usage.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🔍 Scope Clarification
+
+✔ Implemented **only the main center featured article section**, which includes:
+
+* Featured image
+* Category badge
+* Headline / title
+* Author & date meta information
+* Short excerpt
+* Call-to-action button (Read More)
+
+❌ The following were intentionally **not implemented**:
+
+* Navigation bar
+* Left or right sidebars
+* Other article lists or grids
+* Footer
+
+This is strictly aligned with the instruction: **“Implement only the specific section highlighted.”**
+
+---
+
+## 🧱 Tech Stack
+
+* **Next.js (Latest, App Router)**
+* **React 18**
+* **Tailwind CSS v3**
+* **TypeScript**
+
+No additional libraries were used to keep the implementation minimal and focused.
+
+---
+
+## 📁 Project Structure
+
+```txt
+app/
+  ├── layout.tsx        # Root layout
+  ├── page.tsx          # Renders the featured section only
+  └── globals.css       # Tailwind base styles
+
+components/
+  └── featured/
+      ├── FeaturedNewsCard.tsx  # Reusable featured section component
+      └── index.ts
+
+public/
+  └── images/
+      └── featured-news.jpg
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The component is isolated in a feature-based folder to keep it reusable and scalable.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧩 Component Design
 
-## Learn More
+The featured section is implemented as a reusable React component:
 
-To learn more about Next.js, take a look at the following resources:
+```tsx
+<FeaturedNewsCard
+  category="Politics"
+  title="‘Election was rigged’ says opposition, police confirm three dead"
+  excerpt="When we get out of the glass bottle of our ego and when we escape..."
+  author="John Doe"
+  date="February 17, 2020"
+  imageUrl="/images/featured-news.jpg"
+/>
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+All content is driven by props to support future reuse.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📱 Responsiveness
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The layout is fully responsive and tested across:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* **Mobile** – optimized image height, readable text, no overflow
+* **Tablet** – balanced spacing and typography
+* **Desktop** – strong visual hierarchy for a featured article
+
+Tailwind breakpoints (`sm`, `md`) are used for responsive adjustments.
+
+---
+
+## 🎯 Design Considerations
+
+* Semantic HTML (`article`, `h2`, `p`) for accessibility
+* Clear typography hierarchy
+* Minimal but realistic hover and interaction states
+* Clean Tailwind utility usage without over-styling
+
+Pixel-perfect replication was not the goal; instead, the focus was on **visual accuracy, usability, and maintainability**.
+
+---
+
+## ▶️ Getting Started
+
+```bash
+pnpm install
+pnpm dev
+```
+
+Open `http://localhost:3000` to view the featured section.
+
+---
+
+## 📝 Notes
+
+This implementation intentionally avoids over-engineering (state management, APIs, global stores) to stay aligned with the task requirements and evaluation focus.
+
+---
+
+Thank you for reviewing this submission.
