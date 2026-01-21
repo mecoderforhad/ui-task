@@ -48,7 +48,6 @@ app/
 components/
   └── featured/
       ├── FeaturedNewsCard.tsx  # Reusable featured section component
-      └── index.ts
 
 public/
   └── images/
