@@ -2,7 +2,7 @@ import FeaturedNewsCard from "@/components/featured/FeaturedNewsCard";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+    <div className="flex min-h-screen py-20 justify-center bg-zinc-50 font-sans dark:bg-white">
       <FeaturedNewsCard
         category="Politics"
         title="‘Election was rigged’ says opposition, police confirm three dead"
